@@ -40,6 +40,10 @@
       postgresql_version: "{{ supervisor_postgres_database_version_discovered }}"
       tags: configure_server_stack
 
+    - role: ensure_postgresql_up
+      tags:
+        - manage_postgres
+
     #fix proftpd config file, restarts supervisor, put the test tool shed in the list and create a welcome page
     - role: ensure_postgresql_up
 
